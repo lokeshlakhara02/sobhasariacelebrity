@@ -1,0 +1,890 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior : smooth;
+    scroll-padding-top: 2rem;
+     box-sizing: border-box;
+}
+
+:root {
+    --container-color: #1a1e21;
+    --second-color: #53E0E1;
+    --primary--color: #00CDAC;
+    --text-color: #172317;
+    --bg-color: #fff;
+
+}
+
+::selection {
+    color: var(--bg-color);
+    background: var(--second-color);
+}
+
+a{
+    text-decoration: none;
+}
+
+
+
+
+img{
+    width: 100%;
+}
+section{
+    padding: 3rem 0 2rem;
+}
+
+.container{
+    max-width: 1068px;
+    margin: auto;
+    width: 100%;
+}
+
+
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 200;
+}
+
+header.shadow {
+    background: var(--bg-color);
+    transition: 0.3s;
+    box-shadow: 0 1px 4px hsl(0 4% 14% / 10%);
+}
+
+header.shadow .logo{
+    background-image: url(https://www.secs.ac.in/front/img/home/btech.jpg);
+    background-size: contain;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.header-content{
+    /* margin-top: 4rem; */
+    height: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin: 10rem !important; */
+}
+
+.back-home{
+    color: var(--second-color);
+    font-size: 0.9rem;
+}
+
+.header-title{
+    width: 90%;
+    font-size: 2.6rem;
+    color: var(--bg-color);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.header-img{
+    width: 90%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.nav{
+    top: 0;
+     display: flex;
+     align-items: center;
+     justify-content:flex-end;
+     padding: -18px 0;
+}
+.logo{
+    /* border: 1px solid black; */
+    font-size: 50px;
+    font-weight: 600;
+    background-image: url(https://www.secs.ac.in/front/img/home/btech.jpg);
+    background-size: contain;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.login{
+    color: var(--bg-color);
+    padding: 8px 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 4px;
+    background: var(--second-color);
+    transition: transform .5s ease 0s;
+}
+
+.login:hover{
+    transform: scale(1.2);
+}
+
+.home{
+     
+    width: 100%;
+    min-height: 440px;
+    background-image: url(https://www.secs.ac.in/uploadfolder/slider/20-02-28-01-22-06slide.jpg);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .home-img{
+    margin-top: 20px;
+    height: 500px;
+    width: 1000px;
+} */
+
+.home-text{
+    color: var(--bg-color);
+    text-align: center;
+    
+}
+
+.home-title{
+    font-size: 3.5rem;
+}
+
+.home-subtitle{
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+#about .container{
+    position: relative;
+    width: 1600px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    margin: auto;
+}
+
+#about .container .box{
+    position: relative;
+    width: 275px;
+    height: 275px;
+    background: #000;
+    transition: 0.5s;
+    transform-style: preserve-3d;
+    overflow: hidden;
+    margin-right: 15px;
+    margin-top: 45px;
+}
+
+#about .container:hover .box{
+    transform: rotateY(25deg);
+}
+
+#about .container .box:hover ~ .box{
+    transform: rotateY(-25deg);
+}
+
+#about .container .box:hover{
+    transform: rotateY(0deg) scale(1.25);
+    z-index: 1;
+    box-shadow:0 25px 40px rgba(0, 0, 0, 0.5);
+}
+
+#about .container .box .imgBx{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#about .container .box .imgBx:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg,rgb(29,86,165), #000);
+    z-index: 1;
+    opacity: 0;
+    transition: 0.2s;
+    mix-blend-mode: multiply;
+}
+
+#about .box:hover .imgBx:before{
+    opacity: 1;
+}
+
+#about .container .box .imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#about .container .box .content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    padding: 20px;
+    align-items: flex-end;
+    box-sizing: border-box;
+}
+
+#about .container .box .content h2 {
+    color: #fff;
+    transition: 0.5s;
+    text-transform: uppercase;
+    margin-top: 5px;
+    font-size: 20px;
+    transform: translateY(200px);
+    transition-delay: 0.3s;
+}
+
+#about .container .box:hover .content h2{
+    transform: translateY(0px);
+}
+
+#about .container .box .content p{
+    color: #fff;
+    transition: 0.5s;
+    font-size: 14px;
+    transform: translateY(200px);
+    transition-delay: 0.3s;
+}
+
+#about .container .box:hover .content p{
+    transform: translateY(0px);
+}
+
+.post-filter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1.5rem;
+    margin-top: 2rem !important;
+    /* box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1); */
+}
+
+.filter-item{
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform .5s ease 0s;
+}
+
+.filter-item:hover{
+    transform: scale(1.2);
+}
+
+
+
+
+.active-filter{
+    background: var(--second-color);
+    color: var(--bg-color);
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.post{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, auto));
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.post-header{
+    margin-top: 4rem;
+     width: 100%;
+     height: 600px;
+     background: var(--container-color);
+}
+
+.post-container{
+    max-width: 800px;
+    margin: auto;
+    width: 100%;
+}
+
+.post-content{
+    margin-top: 10rem;
+}
+
+video{
+    padding-left: 10px;
+    width: 500px;
+    height: 500px;
+    border-radius: 9px;
+}
+
+
+.sub-heading{
+    font-size: 1.2rem;
+}
+.sub-heading:hover{
+    border-bottom: 1px solid #000;
+}
+
+.post-text{
+    font-size: 1rem;
+    line-height: 1.7rem;
+    margin: 1rem 0;
+    text-align: justify;
+}
+
+.post-box{
+    background: var(--bg-color);
+    box-shadow: 0 4px 14px hsl(355deg 25% 15% / 10%);
+    padding: 15px;
+    border-radius: 0.5rem;
+    transition: transform .5s;
+}
+
+.post-box:hover{
+    transform: scale(1.1);
+}
+
+.post-img{
+    /* padding-bottom: 40px; */
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0.5rem;
+}
+
+
+.category{
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--second-color);
+
+}
+
+.post-title{
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-color);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+
+
+.post-date{
+    cursor: pointer;
+    color: var(--container-color);
+    display: flex;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-top: 4px;
+}
+
+.post-date:hover{
+    color: var(--primary--color);
+}
+
+.post-description{
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    margin: 5px 0 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3 ;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.profile{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-position: center;
+    border: 2px solid var(--second-color);
+}
+
+.profile-name{
+    cursor: pointer;
+    font-size: 0.82rem;
+    font-weight: 500;
+}
+
+.profile-name:hover{
+    border-bottom: 1px solid black;
+}
+
+.footer{
+    border: 1px solid var(--second-color);
+    height: 65px;
+}
+
+.footer1{
+    background: var(--container-color);
+    padding: 70px 0;
+}
+
+.footer1 .row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer1 ul{
+    list-style: none;
+}
+
+.footer1 .container{
+    max-width: 1170px;
+    /* background-color: red; */
+    margin: auto;
+}
+.footer-col{
+    line-height: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4{
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col h4::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+
+}
+
+.footer-col ul li:not(:last-child){
+    margin-bottom: 10px;
+}
+.footer-col ul li a{
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover{
+    color: #ffffff;
+    padding-left: 8px;
+}
+
+.footer-col .social-links a{
+    color: #ffffff;
+    align-items: center;
+    justify-content:center;
+     display: flex;
+     column-gap: 25px;
+     height: 100%;
+     padding-top: 2px;
+  padding-right: 4px;
+  
+}
+ 
+.footer-col .social-links .icon{
+    margin: 0 10px 10px 0;
+    /* flex-direction: column; */
+    padding-left: 3px;
+    padding-top: 8px;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    text-align: center;
+    font-size: 26px;
+    color: #ffffff;
+    border-radius: 50%;
+    /* outline: 2px solid #fff; */
+    transition-property: outline-offset, outline-color,background-color;
+    transition-duration: .25s;
+}
+
+.social-links p{
+    color: #bbbbbb;
+}
+
+
+/* .footer-social{
+    background: var(--second-color);
+    align-items: center;
+    justify-content: flex-end;
+     display: flex;
+     column-gap: 25px;
+     height: 100%;
+     padding-top: 3px;
+  padding-right: 4px;
+} */
+
+/* .footer-social .icon{
+    /* padding: 0 1rem; */
+     width: 60px;
+     height: 60px;
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     text-decoration: none;
+     font-size: 26px;
+     color: #fff;
+     border-radius: 50%;
+     outline: 2px solid #fff;
+     transition-property: outline-offset, outline-color,background-color;
+     transition-duration: .25s;
+} */
+
+.icon:hover{
+    outline-offset: 4px;
+
+}
+
+.icon:hover i {
+    animation: shake .25s;
+}
+
+.icon--facebook:hover{
+    background-color: #1732cbc9;
+    outline-color: #1732cbc9;
+}
+
+.icon--youtube:hover{
+    background-color: #e1131dbd;
+    outline-color: #e1131dbd;
+}
+
+.icon--twitter:hover{
+    background-color: #1da1f2;
+    outline-color: #1da1f2;
+}
+
+.icon--instagram:hover{
+    background-image: radial-gradient(circle at 30% 107%,
+    #fdf497 0%, #fdf497 5%,#fd5949 45%,#d6249f 60%,#285AEB 90%);
+    outline-color: #a02d76;
+}
+
+.icon--linkedin:hover{
+    background-color: #0077b5;
+    outline-color: #0077b5;
+}
+
+@keyframes shake{
+    10%{transform: rotate(15deg);}
+    20%{transform: rotate(-15deg);}
+    30%{transform: rotate(15deg);}
+    40%{transform: rotate(-15deg);}
+}
+
+
+@media (max-width:1060px){
+    .home{
+     
+        width: 100%;
+        min-height: 440px;
+        background-image: url(https://www.secs.ac.in/uploadfolder/slider/20-02-28-01-22-06slide.jpg);
+        background-size: cover;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+    .post-filter{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 1.5rem;
+        margin-top: 2rem !important;
+        /* box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1); */
+    }
+    
+    .logo{
+        margin-top: -20px;
+        /* border: 1px solid black; */
+        font-size: 70px;
+        font-weight: 600;
+    }
+    .container{
+        margin: 0 auto;
+        width: 95%;
+    }
+    #about{
+        position: relative;
+    width: 100%px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    margin: auto;
+    }
+    .home-text{
+        width: 100;
+    }
+}
+
+@media (max-width: 800px){
+    .home{
+     
+        width: 100%;
+        min-height: 440px;
+        background-image: url(https://www.secs.ac.in/uploadfolder/slider/20-02-28-01-22-06slide.jpg);
+        background-size: cover;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+    .logo{
+        /* border: 1px solid black; */
+        font-size: 50px;
+        font-weight: 600;
+        background-image: url(https://www.secs.ac.in/front/img/home/btech.jpg);
+        background-size: contain;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+    .nav{
+        padding: 14px 0;
+    }
+    .home-title{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .post-filter{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 1.5rem;
+        margin-top: 2rem !important;
+        /* box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1); */
+    }
+    
+    #about{
+        position: relative;
+    width: 100%px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    margin: auto;
+    }
+    .post-container{
+        margin: 0 auto;
+        width: 95%;
+    }
+}
+@media (max-width: 768px){
+    .home{
+     
+        width: 100%;
+        min-height: 440px;
+        background-image: url(https://www.secs.ac.in/uploadfolder/slider/20-02-28-01-22-06slide.jpg);
+        background-size: cover;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+    .post-filter{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 1.5rem;
+        margin-top: 2rem !important;
+        /* box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1); */
+    }
+    
+    .logo{
+        /* border: 1px solid black; */
+        font-size: 50px;
+        font-weight: 600;
+      
+    }
+    .nav{
+        padding: 10px 0;
+    }
+   section{
+    padding: 2rem 0;
+   }
+   .header-content{
+    margin-top: 3rem !important;
+   }
+   .home{
+    min-height: 380px;
+   }
+   .home-title{
+    font-size: 3rem;
+   }
+   .header-title{
+    font-size: 2rem;
+   }
+   .header-img{
+    height: 370px;
+   }
+   .post-header{
+    margin-top: 4rem;
+     width: 100%;
+     height: 600px;
+     background: var(--container-color);
+}
+   .post-content{
+    margin-top: 9rem !important;
+   }
+   .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 570px){
+    .home{
+        
+        width: 100%;
+        min-height: 440px;
+        background-image: url(https://www.secs.ac.in/uploadfolder/slider/20-02-28-01-22-06slide.jpg);
+        background-size: cover;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+    .post-filter{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 0.9rem;
+        margin-top: 2rem !important;
+        /* box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1); */
+    }
+    
+    .logo{
+        /* border: 1px solid black; */
+        font-size: 40px;
+        font-weight: 600;
+    }
+    .nav{
+        padding: 8px 0;
+    }
+    .post-header{
+        margin-top: 4rem;
+         width: 100%;
+         height: 600px;
+         background: var(--container-color);
+    }
+   .header-title{
+    width: 100%;
+   }
+   .header-img{
+    height: 340px;
+   }
+
+  .footer-col{
+     width: 100%;
+     margin-bottom: 30px;
+   }
+
+}
+
+@media(max-width: 396px){
+    .home{
+     
+        width: 100%;
+        min-height: 100px;
+        background-image: url(https://www.secs.ac.in/uploadfolder/slider/20-02-28-01-22-06slide.jpg);
+        background-size: cover;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+    .post-filter{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 0.3rem;
+        margin-top: 2rem !important;
+        /* box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1); */
+    }
+    
+    .logo{
+        /* border: 1px solid black; */
+        font-size: 30px;
+        font-weight: 600;
+    }
+    .home-title{
+        font-size: 2rem;
+    }
+
+    .home-subtitle{
+        font-size: 0.9rem;
+    }
+    .home{
+        min-height: 300px;
+    }
+    .post-box{
+        padding: 10px;
+    }
+    .header-title{
+        font-size: 1.4rem;
+    }
+    .header-img{
+        height: 240px;
+    }
+
+    .footer-col{
+        width: 150%;
+        margin-bottom: 30px;
+      }
+       .post-header{
+        margin-top: 4rem;
+         width: 100%;
+         height: 600px;
+         background: var(--container-color);
+    }
+       .post-content{
+        margin-top: 5rem !important;
+       }
+       .post-text{
+        font-size: 0.875rem;
+        line-height: 1.5rem;
+        margin: 10px 0;
+       }
+}
+
+@media(max-width:)
